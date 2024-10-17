@@ -2,11 +2,11 @@
 
 require_once __DIR__ . '/../vendor/autoload.php' ;
 
-use Geosoft\Lavanderia\config\Database;
-use Geosoft\Lavanderia\Controllers\ClienteController;
-use Geosoft\LavanderiaApp\Repositorio\ClienteRepositorio;
 
 
+use Geosoft\LavanderiaApp\config\Database;
+use Geosoft\LavanderiaApp\controllers\ClienteController;
+use Geosoft\LavanderiaApp\repositorios\ClienteRepositorio;
 
 //Configurar a conexão com o banco de dados
 $database = new Database() ;

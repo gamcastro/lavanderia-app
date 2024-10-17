@@ -1,8 +1,8 @@
 <?php
 
-namespace Geosoft\Lavanderia\Controllers ;
+namespace Geosoft\LavanderiaApp\controllers ;
 
-use Geosoft\LavanderiaApp\Repositorio\ClienteRepositorioInterface;
+use Geosoft\LavanderiaApp\repositorios\ClienteRepositorioInterface;
 
 class ClienteController {
     private $repositorio ;

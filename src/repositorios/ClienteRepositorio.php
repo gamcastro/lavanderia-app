@@ -1,8 +1,9 @@
 <?php
 
-namespace Geosoft\LavanderiaApp\Repositorio ;
+namespace Geosoft\LavanderiaApp\repositorios ;
 
-use Geosoft\LavanderiaApp\Modelo\Cliente;
+use Geosoft\LavanderiaApp\Modelos\Cliente;
+
 use PDO;
 
 class ClienteRepositorio implements ClienteRepositorioInterface 
