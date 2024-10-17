@@ -1,6 +1,6 @@
 <?php
 
-namespace Geosoft\Lavanderia\Config ;
+namespace Geosoft\Lavanderia\config ;
 
 use PDO;
 use PDOException;
