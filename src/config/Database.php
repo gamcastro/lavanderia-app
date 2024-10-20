@@ -10,7 +10,7 @@ class Database
 {
     private $host = "localhost" ;
     private $db_name = "u614876628_db" ;
-    private $username = "george" ;
+    private $username = "u614876628_george" ;
     private $password = "Geor1ge2" ;
 
     public $conn ;
