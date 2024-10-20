@@ -1,5 +1,6 @@
 <?php
 
+//Alterado o nome do arquivo
 namespace Geosoft\LavanderiaApp\config ;
 
 use PDO;
