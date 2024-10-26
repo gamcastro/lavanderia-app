@@ -9,37 +9,30 @@
 <body>
     <h1>Cadastro de Clientes</h1>
 
-    <?php
-    if(isset($_SESSION['error_message'])){
-        echo "<div class='error'>" . $_SESSION['error_message'] . "</div>";
-        unset($_SESSION['error_message']);
-    }
-
-    if(isset($_SESSION['success_message'])){
-        echo "<div class='success'>" . $_SESSION['success_message'] . "</div>";
-        unset($_SESSION['success_message']);
-    }
-    ?>
+  
 
     <form action="/public/index.php?action=create" method="POST">
-        <!-- Token CSRF -->
-        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+             
 
         <div>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_POST['name'] ?? ''); ?>" required>
+            <label for="CPF">CPF:</label>
+            <input type="text" id="CPF" name="CPF" required>
         </div>
         <div>
-            <label for="address">Endereço:</label>
-            <input type="text" id="address" name="address" value="<?php echo htmlspecialchars($_POST['address'] ?? ''); ?>" required>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="address"  required>
         </div>
         <div>
-            <label for="phone">Telefone:</label>
-            <input type="text" id="phone" name="phone" value="<?php echo htmlspecialchars($_POST['phone'] ?? ''); ?>" required>
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+        </div>
+        <div>
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone"  required>
         </div>
         <div>
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>" required>
+            <input type="email" id="email" name="email"  required>
         </div>
         <div>
             <button type="submit">Cadastrar</button>

@@ -13,7 +13,7 @@ class ClienteController {
     }
 
     public function showForm() {
-        include __DIR__ . '/../views/cliente_form.php' ;
+        include __DIR__ . '/../views/admin-cliente.php' ;
     }
 
     public function criarCliente() {

@@ -1,66 +1,19 @@
-/* public/css/styles.css */
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
+    height: 100vh ;
 }
 
-h1 {
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+   
+  }
+
+  table {
+    width: 90%;
     text-align: center;
-}
-
-form {
-    background: #fff;
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 500px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-div {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"] {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-button {
-    padding: 10px 15px;
-    background: #5cb85c;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-button:hover {
-    background: #4cae4c;
-}
-
-.error {
-    background: #f2dede;
-    color: #a94442;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ebccd1;
-    border-radius: 3px;
-}
-
-.success {
-    background: #dff0d8;
-    color: #3c763d;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #d6e9c6;
-    border-radius: 3px;
-}
+  }

@@ -17,8 +17,9 @@ class ClienteRepositorio implements ClienteRepositorioInterface
     }
     public function adicionarCliente(Cliente $cliente): bool
     {
-        $sql = "INSERT INTO" . $this->tableName . "(nome,endereco,telefone,email) values (:nome,:endereco,:telefone,:email) " ;
+        $sql = "INSERT INTO" . $this->tableName . "(cpf,nome,endereco,telefone,email) values (:nome,:endereco,:telefone,:email) " ;
         $stmt = $this->conn->prepare($sql) ;
+        $stmt->bindValue(":cpf",$cliente->cpf) ;
         $stmt->bindValue(":nome",$cliente->nome) ;
         $stmt->bindValue(param:":endereco",value:$cliente->endereco) ;
         $stmt->bindValue(param:":telefone",value: $cliente->telefone) ;
