@@ -17,3 +17,8 @@ table, th, td {
     width: 90%;
     text-align: center;
   }
+.botao {
+    padding: 14px 25px;
+    background-color: green;
+    text-decoration: none;
+  }

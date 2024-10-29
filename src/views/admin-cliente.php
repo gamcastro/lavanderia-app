@@ -11,6 +11,8 @@
         <h1>Administração de Clientes</h1>
     </header>
     <main>
+        <section class="detail">
+        
         <table>
             <tr>
                 <th>CPF</th>
@@ -31,6 +33,11 @@
             </tr>
            
         </table>
+        <br>
+        </section>
+        <section class="cadastro">
+            <a href="./novo-cliente" class="botao">Cadastrar Cliente</a>
+        </section>
     </main>
 
     <footer>
