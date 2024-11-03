@@ -6,7 +6,7 @@
 body {
     height: 100vh ;
 }
-
+/* 
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -16,9 +16,9 @@ table, th, td {
   table {
     width: 90%;
     text-align: center;
-  }
-.botao {
+  } */
+/* .botao {
     padding: 14px 25px;
     background-color: green;
     text-decoration: none;
-  }
+  } */
