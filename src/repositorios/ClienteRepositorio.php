@@ -17,7 +17,7 @@ class ClienteRepositorio implements ClienteRepositorioInterface
     }
     public function adicionarCliente(Cliente $cliente): bool
     {
-        $sql = "INSERT INTO" . $this->tableName . "(cpf,nome,endereco,telefone,email) values (:nome,:endereco,:telefone,:email) " ;
+        $sql = "INSERT INTO " . $this->tableName . "(cpf,nome,endereco,telefone,email) values (:cpf, :nome,:endereco,:telefone,:email) " ;
         $stmt = $this->conn->prepare($sql) ;
         $stmt->bindValue(":cpf",$cliente->cpf) ;
         $stmt->bindValue(":nome",$cliente->nome) ;
@@ -30,5 +30,18 @@ class ClienteRepositorio implements ClienteRepositorioInterface
         }
 
         return false ;
+    }
+
+    public function All(): array
+    {
+        $sql = "SELECT * from " . $this->tableName  ;
+        $stmt = $this->conn->query($sql) ;
+        $clienteDados = $stmt->fetchAll(mode:PDO::FETCH_ASSOC) ;
+        $clientes = array_map(function($clienteData){
+            return new Cliente($clienteData['cpf'],$clienteData['nome'],$clienteData['endereco'],
+            $clienteData['telefone'],$clienteData['email'],$clienteData['created_at']) ;
+        },$clienteDados) ;
+        return $clientes ;
+
     }
 }

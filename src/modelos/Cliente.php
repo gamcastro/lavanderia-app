@@ -10,7 +10,7 @@ class Cliente
     public string $endereco ;
     public string $telefone ;
     public string $email ;
-    public string $criado_em ;
+    public ?string $criado_em ;
 
     public function __construct($cpf =null, $nome = null, $endereco = null, $telefone = null , $email = null, $criado_em = null)
     {

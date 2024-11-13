@@ -1,3 +1,18 @@
+<?php
+
+use Geosoft\LavanderiaApp\config\Database;
+use Geosoft\LavanderiaApp\repositorios\ClienteRepositorio;
+
+    require __DIR__ . '/../../vendor/autoload.php' ;
+
+    $pdo = new Database() ;
+    $database = $pdo->getConnection() ;
+    $clienteRepositorio = new ClienteRepositorio($database) ;
+    $clienteDataList = $clienteRepositorio->All() ;
+  
+
+    
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -34,15 +49,17 @@
                                 <th>E-mail</th>
                                 <th colspan="2">Ações</th>
                             </tr>
+                            <?php foreach ($clienteDataList as $cliente): ?>
                             <tr>
-                                <td>710500353-72</td>
-                                <td>George André Melo Castro</td>
-                                <td>Rua Q, 13, Planalto Anil III</td>
-                                <td>(98) 99233-2673</td>
-                                <td>george.castro@tre-ma.jus.br</td>
+                                <td><?= $cliente->cpf ?></td>
+                                <td><?= $cliente->nome ?></td>
+                                <td><?= $cliente->endereco ?></td>
+                                <td><?= $cliente->telefone ?></td>
+                                <td><?= $cliente->email ?></td>                                
                                 <td>Editar</td>
                                 <td>Excluir</td>
                             </tr>
+                            <?php endforeach ;?>
 
                         </table>
 

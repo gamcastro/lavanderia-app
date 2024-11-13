@@ -17,11 +17,19 @@ class ClienteController {
     }
 
     public function criarCliente() {
-        $data = [
-            'nome' => $_POST['nome'],
-            'endereco' => $_POST['endereco'],
-            'telefone' => $_POST['telefone'],
-            'email' => $_POST['email']
-        ] ;
+
+        include __DIR__ . '/../views/cliente_form.php' ;
+        // $data = [
+        //     'nome' => $_POST['nome'],
+        //     'endereco' => $_POST['endereco'],
+        //     'telefone' => $_POST['telefone'],
+        //     'email' => $_POST['email']
+        // ] ;
+    }
+
+    public function inserirCliente() 
+    {
+        $nome = $_POST['nome'] ;
+        header("Location: ./?success=" . $nome) ;
     }
 }
