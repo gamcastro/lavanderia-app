@@ -2,7 +2,7 @@
 
 namespace Geosoft\LavanderiaApp\repositorios ;
 
-use Geosoft\LavanderiaApp\Modelos\Cliente;
+use Geosoft\LavanderiaApp\modelos\Cliente;
 
 interface ClienteRepositorioInterface
 {

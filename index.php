@@ -5,6 +5,7 @@ use Geosoft\LavanderiaApp\controllers\ClienteController;
 use Geosoft\LavanderiaApp\repositorios\ClienteRepositorio;
 
 require_once __DIR__ . '/vendor/autoload.php' ;
+
 define('APP_NAME', '/lavanderia-app');
 $route = str_replace(APP_NAME, '', $_SERVER['REQUEST_URI']);
 if (empty($route)) {
