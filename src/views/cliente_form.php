@@ -2,7 +2,7 @@
  <?php
 
 use Geosoft\LavanderiaApp\config\Database;
-use Geosoft\LavanderiaApp\Modelos\Cliente;
+use Geosoft\LavanderiaApp\modelos\Cliente;
 use Geosoft\LavanderiaApp\repositorios\ClienteRepositorio;
 
  if (isset($_POST['cadastrar'])) {
