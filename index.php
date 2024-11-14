@@ -7,7 +7,12 @@ use Geosoft\LavanderiaApp\repositorios\ClienteRepositorio;
 require_once __DIR__ . '/vendor/autoload.php' ;
 
 define('APP_NAME', '/lavanderia-app');
-$route = str_replace(APP_NAME, '', $_SERVER['REQUEST_URI']);
+$urlSemParams = explode('?',$_SERVER['REQUEST_URI'])[0] ;
+//var_dump($urlSemParams) ;
+//exit() ;
+$route = str_replace(APP_NAME, '', $urlSemParams); 
+//var_dump($route) ;
+//exit() ;
 if (empty($route)) {
     $route = '/' ;
 }
@@ -25,7 +30,9 @@ if ($route === '/') {
 } elseif ($route === '/inserir-cliente') {
     $controller = new ClienteController($clienteRepositorio) ;
     $controller->inserirCliente() ;
-}
+} elseif ($route === '/excluir-cliente'){
+    echo "Excluir" ;
+} 
 // require_once __DIR__ . '/../vendor/autoload.php' ;
 
 

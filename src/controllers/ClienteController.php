@@ -32,4 +32,8 @@ class ClienteController {
         $nome = $_POST['nome'] ;
         header("Location: ./?success=" . $nome) ;
     }
+
+    public function deletarCliente() {
+        
+    }
 }

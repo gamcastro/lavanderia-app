@@ -56,8 +56,8 @@ use Geosoft\LavanderiaApp\repositorios\ClienteRepositorio;
                                 <td><?= $cliente->endereco ?></td>
                                 <td><?= $cliente->telefone ?></td>
                                 <td><?= $cliente->email ?></td>                                
-                                <td>Editar</td>
-                                <td>Excluir</td>
+                                <td><a href="./editar-cliente">Editar</a></td>
+                                <td><a href="./excluir-cliente?cpf<?= $cliente->cpf ?>">Excluir</a></td>
                             </tr>
                             <?php endforeach ;?>
 
