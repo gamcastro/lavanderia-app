@@ -2,7 +2,7 @@
 
 namespace Geosoft\LavanderiaApp\controllers ;
 
-use Geosoft\LavanderiaApp\Modelos\Cliente;
+use Geosoft\LavanderiaApp\modelos\Cliente;
 use Geosoft\LavanderiaApp\repositorios\ClienteRepositorioInterface;
 use PDO;
 
