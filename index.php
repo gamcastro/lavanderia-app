@@ -2,7 +2,7 @@
 
 use Geosoft\LavanderiaApp\config\Database;
 use Geosoft\LavanderiaApp\controllers\ClienteController;
-use Geosoft\LavanderiaApp\Modelos\Cliente;
+use Geosoft\LavanderiaApp\modelos\Cliente;
 use Geosoft\LavanderiaApp\repositorios\ClienteRepositorio;
 
 require_once __DIR__ . '/vendor/autoload.php' ;
