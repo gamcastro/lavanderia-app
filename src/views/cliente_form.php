@@ -1,30 +1,5 @@
 <!-- src/views/customer_form.php -->
- <?php
 
-use Geosoft\LavanderiaApp\config\Database;
-use Geosoft\LavanderiaApp\modelos\Cliente;
-use Geosoft\LavanderiaApp\repositorios\ClienteRepositorio;
-
- if (isset($_POST['cadastrar'])) {
-    $pdo = new Database() ;
-    
-    $cliente = new Cliente(
-        $_POST['cpf'],
-        $_POST['nome'],
-        $_POST['endereco'],
-        $_POST['telefone'],
-        $_POST['email'],
-        null
-    ) ;
-
-    $clienteRepositorio = new ClienteRepositorio($pdo->getConnection()) ;
-    if ($clienteRepositorio->adicionarCliente($cliente)) {
-         header('Location: '  . './') ;
-    } else {
-        echo "Cliente não cadastrado" ;
-    }
- } 
- ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -42,23 +17,23 @@ use Geosoft\LavanderiaApp\repositorios\ClienteRepositorio;
 
         <div>
             <label for="CPF">CPF:</label>
-            <input type="text" id="cpf" name="cpf" required>
+            <input type="text" id="cpf" name="cpf" value="<?= $cliente->cpf ?>" required>
         </div>
         <div>
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome"  required>
+            <input type="text" id="nome" name="nome"  value="<?= $cliente->nome ?>" required>
         </div>
         <div>
             <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" required>
+            <input type="text" id="endereco" name="endereco" value="<?= $cliente->endereco ?>" required>
         </div>
         <div>
             <label for="telefone">Telefone:</label>
-            <input type="text" id="telefone" name="telefone"  required>
+            <input type="text" id="telefone" name="telefone"  value="<?= $cliente->telefone ?>" required>
         </div>
         <div>
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email"  required>
+            <input type="email" id="email" name="email" value="<?= $cliente->email ?>" required>
         </div>
         <div>
             <button type="submit" name="cadastrar">Cadastrar</button>

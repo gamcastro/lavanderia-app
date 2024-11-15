@@ -44,4 +44,44 @@ class ClienteRepositorio implements ClienteRepositorioInterface
         return $clientes ;
 
     }
+
+    function buscarCliente(string $cpf) : Cliente
+    {
+        $sql = 'SELECT * from ' . $this->tableName . ' WHERE cpf = ?' ;
+        $stmt = $this->conn->prepare($sql) ;
+        $stmt ->bindValue(param:1,value:$cpf) ;
+        $stmt->execute() ;
+        $dados = $stmt->fetch(mode:PDO::FETCH_ASSOC) ;
+       $cliente = new Cliente($dados['cpf'],
+                            $dados['nome'],
+                            $dados['endereco'],
+                            $dados['telefone'],
+                            $dados['email'],
+                            $dados['created_at']) ;
+        return $cliente ;
+
+    }
+
+    public function deletarCliente(string $cpf)
+    {
+        $sql = "DELETE FROM " . $this->tableName . " WHERE cpf = ?"  ;
+        $stmt = $this->conn->prepare($sql) ;
+        $stmt->bindValue(param:1,value:$cpf) ;
+        $stmt->execute() ;
+    }
+
+    public function atualizarCliente(Cliente $cliente)
+    {
+        $sql = 'UPDATE clientes set cpf = ? , nome = ? , endereco = ? , telefone = ? , email = ? where cpf=?' ;
+        $stmt = $this->conn->prepare($sql) ;
+        $stmt->bindValue(param:1,value:$cliente->cpf) ;
+        $stmt->bindValue(param:2, value:$cliente->nome) ;
+        $stmt->bindValue(param:3,value:$cliente->endereco) ;
+        $stmt->bindValue(param:4,value:$cliente->telefone) ;
+        $stmt->bindValue(param:5,value: $cliente->email) ;
+        $stmt->bindValue(param:6, value: $cliente->cpf) ;
+        $stmt->execute() ;
+
+
+    }
 }

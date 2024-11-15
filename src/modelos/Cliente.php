@@ -5,14 +5,14 @@ namespace Geosoft\LavanderiaApp\Modelos ;
 class Cliente 
 {
 
-    public string $cpf ;
-    public string $nome ;
-    public string $endereco ;
-    public string $telefone ;
-    public string $email ;
+    public ?string $cpf ;
+    public ?string $nome ;
+    public ?string $endereco ;
+    public ?string $telefone ;
+    public ?string $email ;
     public ?string $criado_em ;
 
-    public function __construct($cpf =null, $nome = null, $endereco = null, $telefone = null , $email = null, $criado_em = null)
+    public function __construct($cpf = null, $nome = null, $endereco = null, $telefone = null , $email = null, $criado_em = null)
     {
         $this->cpf = $cpf ;
         $this->nome = $nome ;

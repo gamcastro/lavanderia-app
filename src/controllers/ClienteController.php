@@ -2,23 +2,29 @@
 
 namespace Geosoft\LavanderiaApp\controllers ;
 
+use Geosoft\LavanderiaApp\Modelos\Cliente;
 use Geosoft\LavanderiaApp\repositorios\ClienteRepositorioInterface;
+use PDO;
 
-class ClienteController {
-    private $repositorio ;
+class ClienteController 
+{
+    private ClienteRepositorioInterface  $clienteRepositorio ;
 
-    public function __construct(ClienteRepositorioInterface $repositorio)
+    public function __construct(ClienteRepositorioInterface $clienteRepositorio)
     {
-        $this->repositorio = $repositorio ;
+        $this->clienteRepositorio = $clienteRepositorio ;
     }
 
-    public function showForm() {
+    public function showAdmin() {
         require_once __DIR__ . '/../views/admin-cliente.php' ;
     }
 
-    public function criarCliente() {
+    public function showForm() {
 
-        require_once __DIR__ . '/../views/cliente_form.php' ;
+             $cliente = new Cliente() ;
+             require_once __DIR__ . '/../views/cliente_form.php' ;
+     
+        
         // $data = [
         //     'nome' => $_POST['nome'],
         //     'endereco' => $_POST['endereco'],
@@ -27,13 +33,29 @@ class ClienteController {
         // ] ;
     }
 
+    public function editarCliente(string $cpf) {
+        $cliente = $this->clienteRepositorio->buscarCliente($cpf) ;
+        require_once __DIR__ . "/../views/cliente_form.php" ;
+
+    }
     public function inserirCliente() 
     {
         $nome = $_POST['nome'] ;
         header("Location: ./?success=" . $nome) ;
     }
 
-    public function deletarCliente() {
-        
+    public function deletarCliente(string $cpf) 
+    {
+         $this->clienteRepositorio->deletarCliente($cpf) ;      
+    }
+
+    public function atualizarCliente(Cliente $cliente) {
+       $this->clienteRepositorio->atualizarCliente($cliente) ;
+       header('Location: ./') ;
+    }
+
+    public function adicionarCliente(Cliente $cliente) {
+        $this->clienteRepositorio->adicionarCliente($cliente) ;
+        header('Location: ./') ;
     }
 }
